@@ -62,5 +62,5 @@ typings/
 
 # Personal directories and files
 SARgE/
-.7z
-.ion
+*.7z
+*.ion
