@@ -1,2 +1,2 @@
 # saintBooze
-Tool for booze registration
+Tool for booze registration by Saint Booze
