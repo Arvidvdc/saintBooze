@@ -1,0 +1,90 @@
+:root {
+    --header-back: #DAA300;
+    --header-for: #ffffff;
+    --menu-back: #99C11C;
+    --menu-for: #000000;
+    --menu-high-back: #BF3816;
+    --menu-high-for: #ffffff;
+    --content-back: #ffffff;
+    --content-for: #000000;
+    --foot-back: #884205;
+    --foot-for: #ffffff;
+    --main-back: #507E2E;
+    --main-for: #000000;
+
+}
+
+@font-face {
+    font-family: 'vinchand';
+    src: url('/fonts/VincHand.ttf');
+}
+
+@font-face {
+    font-family: 'robotoReg';
+    src: url('/fonts/RobotoRegular.ttf');
+}
+
+@font-face {
+    font-family: 'robotoBlack';
+    src: url('/fonts/RobotoBlack.ttf');
+}
+
+@font-face {
+    font-family: 'robotoBold';
+    src: url('/fonts/RobotoBold.ttf');
+}
+
+@font-face {
+    font-family: 'robotoThin';
+    src: url('/fonts/RobotoThin.ttf');
+}
+
+@font-face {
+    font-family: 'robotoLight';
+    src: url('/fonts/RobotoLight.ttf');
+}
+
+body {
+    background-color: var(--main-back);
+    color: var(--main-for);
+}
+
+.sgtHeader {
+    background-color: var(--header-back);
+    color: var(--header-for);
+    font-family: 'vinchand';
+    font-size: 50px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 5px;
+    height: 150px;
+}
+
+.sgtFooter {
+    background-color: var(--foot-back);
+    color: var(--foot-for);
+    text-align: center;
+    font-family: 'robotoThin';
+    font-size: x-small;
+    font-weight: bolder;
+    height: auto;
+    margin-top: 5px;
+    padding: 5px 0px;
+}
+
+.sgtMenu {
+    background-color: var(--menu-back);
+    color: var(--menu-for);
+    font-family: 'robotoBlack';
+    text-shadow: 2px 2px 2px #d6da00;
+    text-transform: uppercase;
+    margin: 10px 0px;
+}
+
+.sgtContent {
+    font-family: 'robotoReg';
+    background-color: var(--content-back);
+    color: var(--content-for);
+    padding: 5px;
+    min-height: 500px;
+}
