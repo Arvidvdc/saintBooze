@@ -12,7 +12,8 @@ const   bodyParser          = require("body-parser"),
         LocalStrategy       = require("passport-local");
 
 // Routes
-const   indexRoutes         = require("./routes/index");
+const   indexRoutes         = require("./routes/index"),
+        boozeRoutes         = require("./routes/booze");
 
 // dotENV
 require('dotenv').config();
@@ -69,6 +70,7 @@ next();
 
 // Routes
 app.use(indexRoutes);
+app.use("/booze", boozeRoutes);
 
 // Listener
 app.listen(appPort, appIP, ()=>console.log("Saint Booze \nStarted on: " + appIP + "\n      port: " + appPort ));

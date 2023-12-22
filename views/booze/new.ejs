@@ -1,0 +1,71 @@
+<%- include("../partials/header") -%>
+
+    <div class="container-fluid sgtContent">
+        <form action="/booze/new/" method="post" class="row g-3" style="margin-left: 5px; margin-right: 5px;">
+
+            <div class="row g-2">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="name" name="name" required autofocus>
+                        <label for="name">Merk</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="series" name="series">
+                        <label for="series">Serie</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="contents" name="contents" value="70">
+                        <label for="contents">Inhoud in cl</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="alcohol" name="alcohol">
+                        <label for="alcohol">Alcohol in %</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-2">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <select class="form-select" name="category" id="category">
+                            <option selected></option>
+                            <option value="Whiskey">Whiskey</option>
+                            <option value="Whisky">Whisky</option>
+                            <option value="Gin">Gin</option>
+                            <option value="Bier">Bier</option>
+                            <option value="Wijn">Wijn</option>
+                            <option value="Liqueur">Liqueur</option>
+                            <option value="Rum">Rum</option>
+                        </select>
+                        <label for="category">Soort drank</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <select class="form-select" name="subcategory" id="subcategory">
+                            <option selected></option>
+                            <option value="Single malt">Single malt</option>
+                            <option value="Blend">Blend</option>
+                            <option value="Sinasappel">Sinasappel</option>
+                        </select>
+                        <label for="subcategory">Specificatie</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="aged" name="aged">
+                        <label id="agedLabel" for="aged" class="form-label">Leeftijd</label>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <script src="/js/boozeNew.js"></script>
+<%- include("../partials/footer") -%>
