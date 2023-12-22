@@ -2,5 +2,5 @@
 
 // HOME controller
 exports.home = (req,res) => {
-    res.render("./index/index");
+    res.render("./index/index", {page: "home"});
 }

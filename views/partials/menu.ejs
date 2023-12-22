@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/navbar.css">
 <nav class="navbar navbar-expand-lg sgtMenu">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -7,15 +8,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link <%= typeof page !== 'undefined' && page === 'home' ? 'active' : '' %>" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle <%= typeof page !== 'undefined' && page.slice(0,5) === 'booze' ? 'active' : '' %>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Booze shit
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="Booze">Booze index</a></li>
-                        <li><a class="dropdown-item" href="booze/new">Add some booze</a></li>
+                        <li><a class="dropdown-item <%= typeof page !== 'undefined' && page === 'booze' ? 'active' : '' %>" href="/booze">Booze index</a></li>
+                        <li><a class="dropdown-item <%= typeof page !== 'undefined' && page === 'boozeNew' ? 'active' : '' %>" href="/booze/new">Add some booze</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item disabled" href="#">Something else here</a></li>
                     </ul>
