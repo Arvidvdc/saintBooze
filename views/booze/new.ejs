@@ -1,5 +1,5 @@
 <%- include("../partials/header") -%>
-
+    <link rel="stylesheet" href="/css/buttons.css">
     <div class="container-fluid sgtContent">
         <form action="/booze/new/" method="post" class="row g-3" style="margin-left: 5px; margin-right: 5px;">
 
@@ -28,6 +28,16 @@
                         <label for="alcohol">Alcohol in %</label>
                     </div>
                 </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="image" name="image">
+                        <label for="image">Afbeelding</label>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 col-12 col-sm-1">
+                    <div class="btn btn-primary but-sarge-default" onclick="enterImage()">Afbeelding</div>
+                </div>
+    
             </div>
 
             <div class="row g-2">
@@ -65,6 +75,107 @@
                 </div>
             </div>
 
+            <hr style="margin-bottom: 0px;">
+
+            <div class="row g-2">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="distillery" name="distillery">
+                        <label for="distillery">Distilleerderij</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="distilleryFounded" name="distilleryFounded">
+                        <label for="distilleryFounded">Distilleerderij gesticht</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="distilleryWebsite" name="distilleryWebsite">
+                        <label for="distilleryWebsite">Distilleerderij website</label>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 col-12 col-sm-1">
+                    <div class="btn btn-primary but-sarge-default" onclick="openSite('distilleryWebsite')">Open</div>
+                </div>
+            </div>
+
+            <div class="row g-2">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <textarea class="form-control" style="height: 100px;" name="nose" id="nose" cols="30" rows="100"></textarea>
+                        <label for="nose">Opgegeven nosing</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <textarea class="form-control" style="height: 100px;" name="taste" id="taste" cols="30" rows="10"></textarea>
+                        <label for="taste">Opgegeven tasting</label>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="margin-bottom: 0px;">
+
+            <div class="row g-2">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="origin" name="origin">
+                        <label for="origin">Land van herkomst</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="region" name="region">
+                        <label for="region">Regio</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <select class="form-select" name="continent" id="continent">
+                            <option selected></option>
+                            <option value="Afrika">Afrika</option>
+                            <option value="Australie">Australië</option>
+                            <option value="Azie">Azië</option>
+                            <option value="Europa">Europa</option>
+                            <option value="Noord Amerika">Noord Amerika</option>
+                            <option value="Zuid Amerika">Zuid Amerika</option>
+                        </select>
+                        <label for="continent">Werelddeel</label>
+                    </div>
+                </div>
+            </div>
+            
+            <hr style="margin-bottom: 0px;">
+            <div style="position:relative;top:-27px; background-color: var(--header-back);width: fit-content; margin-bottom: -35px; margin-left: -4px;">SAINT BOOZE INPUT</div>
+
+            <div class="row g-2" style="background-color: var(--header-back); padding-bottom: 8px;">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <textarea class="form-control" style="height: 100px;" name="stBoozeNose" id="stBoozeNose" cols="30" rows="100"></textarea>
+                        <label for="stBoozeNose">Nosing</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <textarea class="form-control" style="height: 100px;" name="stBoozeTaste" id="stBoozeTaste" cols="30" rows="10"></textarea>
+                        <label for="stBoozeTaste">Tasting</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="stBoozeRating" name="stBoozeRating">
+                        <label for="stBoozeRating">Cijfer</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="stBoozeDayAfter" name="stBoozeDayAfter">
+                        <label for="stBoozeDayAfter">Day after</label>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
     <script src="/js/boozeNew.js"></script>
