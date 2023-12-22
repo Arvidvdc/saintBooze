@@ -1,6 +1,6 @@
 :root {
     --header-back: #DAA300;
-    --header-for: #ffffff;
+    --header-for: #884205;
     --menu-back: #99C11C;
     --menu-for: #000000;
     --menu-high-back: #BF3816;
@@ -56,6 +56,8 @@ body {
     font-size: 50px;
     font-weight: bolder;
     text-transform: uppercase;
+    text-shadow: 2px 0 #ffffff, -2px 0 #ffffff, 0 2px #ffffff, 0 -2px #ffffff,
+               1px 1px #ffffff, -1px -1px #ffffff, 1px -1px #ffffff, -1px 1px #ffffff;
     padding: 5px;
     height: 150px;
 }
