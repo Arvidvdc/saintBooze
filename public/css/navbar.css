@@ -2,10 +2,26 @@
 .sgtMenu {
     background-color: var(--menu-back);
     color: var(--menu-for);
-    font-family: 'robotoBlack';
-    text-shadow: 2px 2px 2px #d6da00;
+    /* font-family: 'robotoBlack'; */
+    font-family: 'vinchand';
+    font-size: x-large;
+    font-weight: bolder;
     text-transform: uppercase;
-    margin: 10px 0px;
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    color: var(--menu-for);
+}
+
+.nav-link:hover {
+    color: var(--menu-high-for);
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+        1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
+}
+
+.nav-link.disabled {
+    color: var(--menu-disabled-for);
 }
 
 .navbar-nav .nav-link.active {

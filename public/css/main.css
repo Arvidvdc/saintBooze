@@ -1,10 +1,12 @@
 :root {
     --header-back: #DAA300;
     --header-for: #884205;
-    --menu-back: #99C11C;
-    --menu-for: #000000;
+    --menu-back: #884205;
+    --menu-for: #99C11C;
     --menu-high-back: #BF3816;
     --menu-high-for: #ffffff;
+    --menu-disabled-back: #884205;
+    --menu-disabled-for: #82993c;
     --content-back: #ffffff;
     --content-for: #000000;
     --foot-back: #884205;
