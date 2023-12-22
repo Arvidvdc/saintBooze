@@ -72,15 +72,6 @@ body {
     padding: 5px 0px;
 }
 
-.sgtMenu {
-    background-color: var(--menu-back);
-    color: var(--menu-for);
-    font-family: 'robotoBlack';
-    text-shadow: 2px 2px 2px #d6da00;
-    text-transform: uppercase;
-    margin: 10px 0px;
-}
-
 .sgtContent {
     font-family: 'robotoReg';
     background-color: var(--content-back);

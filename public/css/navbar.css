@@ -1,0 +1,15 @@
+
+.sgtMenu {
+    background-color: var(--menu-back);
+    color: var(--menu-for);
+    font-family: 'robotoBlack';
+    text-shadow: 2px 2px 2px #d6da00;
+    text-transform: uppercase;
+    margin: 10px 0px;
+}
+
+.navbar-nav .nav-link.active {
+    background-color: var(--menu-high-back);
+    color: var(--menu-high-for);
+    text-shadow: 2px 2px 2px #000000;
+}
