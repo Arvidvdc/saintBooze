@@ -14,9 +14,10 @@
     height: 50px;
 }
 
-.nav-link {
+.nav-link, .dropdown-toggle.show:hover {
     color: var(--menu-for);
 }
+
 
 .nav-link:hover {
     color: var(--menu-high-for);
@@ -26,6 +27,36 @@
 
 .nav-link.disabled {
     color: var(--menu-disabled-for);
+}
+
+.dropdown-menu {
+    background-color: var(--menu-back);
+    color: var(--menu-for);
+    font-family: 'vinchand';
+    font-size: x-large;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.dropdown-item {
+    color: var(--menu-for);
+    font-weight: bolder;
+}
+
+.dropdown-item:hover {
+    background-color: var(--menu-back);
+    color: var(--menu-high-for);
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+        1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
+}
+
+.dropdown-item.disabled {
+    color: var(--menu-disabled-for);
+}
+.dropdown-item.active {
+    background-color: var(--menu-high-back);
+    color: var(--menu-high-for);
+    text-shadow: 2px 2px 2px #000000;
 }
 
 .navbar-nav .nav-link.active {
