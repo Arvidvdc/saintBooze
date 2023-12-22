@@ -2,12 +2,16 @@
 .sgtMenu {
     background-color: var(--menu-back);
     color: var(--menu-for);
-    /* font-family: 'robotoBlack'; */
     font-family: 'vinchand';
     font-size: x-large;
     font-weight: bolder;
     text-transform: uppercase;
     margin-bottom: 10px;
+}
+
+.navbar-brand img {
+    width: auto;
+    height: 50px;
 }
 
 .nav-link {
