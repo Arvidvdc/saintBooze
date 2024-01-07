@@ -64,7 +64,7 @@ mongoose.connect(appDB, {}).then(
 // Middleware
 app.use((req,res,next)=>{
 res.locals.appMarker = appMarker;
-res.locals.currentUser=req.user;
+// res.locals.currentUser=req.user;
 next();
 });
 

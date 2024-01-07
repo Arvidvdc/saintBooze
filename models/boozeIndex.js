@@ -16,22 +16,17 @@ const BoozeSchema = new mongoose.Schema(
         region              : String,
         continent           : String,
         alcohol             : Number,
-        favorites           : {
-            person:     String
-        },
+        // favorites           : {
+        //     person:     String
+        // },
         favoritesExternal   : String,
-        image               : {
-            imagePath:  String,
-            active:     Boolean
-        },
+        image               : String,
         nose                : String,
         taste               : String,
         stBoozeNose         : String,
         stBoozeTaste        : String,
         stBoozeRating       : String,
         stBoozeDayAfter     : String,
-        priceNL             : String,
-        priceDE             : String,
         dateAdded           : {
             type:       Date,
             default:    Date.now
@@ -41,5 +36,4 @@ const BoozeSchema = new mongoose.Schema(
 );
 
 BoozeSchema.plugin(passportLocalMongoose);
-
 module.exports = mongoose.model("Booze", BoozeSchema);
