@@ -5,13 +5,7 @@ const   BOOZE  = require("../models/boozeIndex");
 exports.index = (req,res) => {
     BOOZE.find()
         .then((foundAllBooze) => {
-            let foundTotal = [];
-            foundAllBooze.forEach(bottle => {
-                if(bottle.name) {
-                    foundTotal.push(bottle.name);
-                }
-            });
-            res.send(foundTotal);
+            res.render("./booze/index", { page: "boozeIndex", boozeData: foundAllBooze });
         })
         .catch((error) => {
             console.error("Error creating foundAllBooze:", error);
