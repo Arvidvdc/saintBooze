@@ -1,0 +1,36 @@
+.container {
+    border: 5px solid purple;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+/* devider on home.ejs */
+.module-header {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 15px 0;
+}
+
+.module-title {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 5px;
+    padding: 0 30px 0 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.module-title:after{
+    content: "";
+    display: block;
+    height: 6px;
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+    width: 1920px;
+    left: 100%;
+    background: purple;
+}
