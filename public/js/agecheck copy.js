@@ -49,29 +49,27 @@ $(document).on("click", "#buttonContinue", function(){
     }
 });
 
-getAge = (dateString) => {
-    let today = new Date();
-    let birthDate = new Date(dateString);
-    let age = today.getFullYear() - birthDate.getFullYear();
-    let m = today.getMonth() - birthDate.getMonth();
+//Function for calculating age
+function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
         age--;
     }
-     return age;    
+    return age;
 }
-
-
-// console.log('age: ' + getAge("2004/07/05"
-
+// console.log('age: ' + getAge("2004/07/05"));
 
 // Function for getting current year
-currentYear = () => {
+function currentYear() {
     let vandaag = new Date()
     return vandaag.getFullYear();
 }
 
 //Function for filling dropdown element ageDay
-filDayCombo = () => {
+function filDayCombo(){
     $('#ageDay').empty()
     for (let i = 1; i < 32; i++) {
         let val=i;
@@ -89,8 +87,8 @@ filDayCombo = () => {
 // Element ageMonth will be filled in the HTML-scource 
 
 //Function for filling dropdown element ageYear
-filYearCombo = () => {
-        $('#ageYear').empty()
+function filYearCombo(){
+    $('#ageYear').empty()
     let baseYear =currentYear();
     for(i=baseYear; baseYear-100 < i; i--) {
         textnode2=document.getElementById("ageYear");
