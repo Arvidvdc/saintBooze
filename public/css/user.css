@@ -1,0 +1,139 @@
+.w80 {
+    margin-top: 15px;
+    width: 80%;
+    align-self: auto;
+}
+
+body {
+    background-color: #bfff3f;
+}
+
+[class*="col-"] {
+    /* background-color: #527a01; */
+    color: #000000;
+}
+
+.borderimg { 
+    background-color: #877021;
+    color: #000000;
+    border: 10px solid transparent;
+    padding: 15px;
+    margin: 25px 10px;
+    border-image-source: url(/images/claymore-edit2.png);
+    /* border-image: url(claymore-edit.png) 50 stretch; */
+    border-image-repeat: stretch;
+    border-image-outset: 10px 15px 10px 15px;
+    /* border-image-width: 30px 30px 40px 10px; */
+    /* border-image-slice: 10% fill; */
+    border-image-slice: 100 0;
+}
+
+.borderimg h2 {
+    color: #ffffff;
+    font-size: larger;
+    font-weight: bolder;
+    margin: auto;
+}
+
+.borderimg label {
+    padding-bottom: 5px;
+}
+
+.borderimg a {
+    text-decoration: none;
+    background-color: var(--main-btn-back);
+    color: var(--main-btn-for);
+    margin: 0px 5px;
+    text-align: center;
+}
+
+.borderimg input[type=submit], .borderimg input[type=reset], .borderimg .delButton:hover, .borderimg a {
+    border: 5px solid transparent;
+    border-image-source: url(/images/claymore-edit2.png);
+    border-image-repeat: stretch;
+    border-image-outset: 5px;
+    border-image-slice: 100;
+    border-radius: 2px;
+    padding: 5px 20px;
+}
+
+.borderimg input[type=reset]:hover, .borderimg input[type=submit]:hover, .borderimg a:hover {
+    box-shadow: 8px 8px 5px 2px #00000033
+}
+
+.borderimg input[type=reset]:hover, .borderimg .delButton:hover {
+    border-image-source: url(/images/claymore-red.png);
+    padding: 0px 20px;
+}
+.borderimg input[type=submit]:hover, .borderimg a:hover {
+    border-image-source: url(/images/claymore-black.png);
+}
+
+.delButton {
+    color: #000000;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: grid;
+    align-content: space-evenly;
+}
+
+
+/* responsive */
+.selectAdjust {
+    margin-right: inherit;
+}
+
+.borderimg select {
+    width: 97%;
+}
+
+.but-row {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0px;
+}
+
+@media only screen and (max-width: 850px) {
+    .but-row {
+        display: block;
+        justify-content: inherit;
+        padding: inherit;
+    }
+    .borderimg a {
+        display: block;
+        margin: 10px;
+    }
+    .borderimg input[type=submit] {
+        display: block;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .selectAdjust {
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (min-width: 920px) {
+    .borderimg select {
+        width: 50%;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .selectAdjust {
+        margin-right: -20px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .selectAdjust {
+        margin-right: -25px;
+    }
+}
