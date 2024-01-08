@@ -9,11 +9,13 @@ const   bodyParser          = require("body-parser"),
         methodOverride      = require("method-override"),
         mongoose            = require("mongoose"),
         passport            = require("passport"),
-        LocalStrategy       = require("passport-local");
+        LocalStrategy       = require("passport-local"),
+        flash               = require("connect-flash-plus");
 
 // Routes
 const   indexRoutes         = require("./routes/index"),
-        boozeRoutes         = require("./routes/booze");
+        boozeRoutes         = require("./routes/booze"),
+        userRoutes          = require("./routes/users");
 
 // dotENV
 require('dotenv').config();
@@ -53,6 +55,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
+app.use(flash());
 
 // Database connection
 mongoose.connect(appDB, {}).then(
@@ -64,13 +67,16 @@ mongoose.connect(appDB, {}).then(
 // Middleware
 app.use((req,res,next)=>{
 res.locals.appMarker = appMarker;
-// res.locals.currentUser=req.user;
+res.locals.currentUser=req.user;
+res.locals.error = req.flash("error");
+res.locals.success = req.flash("success");
 next();
 });
 
 // Routes
 app.use(indexRoutes);
 app.use("/booze", boozeRoutes);
+app.use("/user", userRoutes);
 
 // Listener
 app.listen(appPort, appIP, ()=>console.log("Saint Booze \nStarted on: " + appIP + "\n      port: " + appPort ));

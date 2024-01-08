@@ -1,0 +1,50 @@
+<%- include("../partials/header") -%>
+    <script src="/js/user.js"></script>
+	<link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/user.css">
+
+    <div class="center">
+        <div class="row">
+            <div class="col-10 col-s-12">
+                <h2 style="color: #ffffff;">Gebruikersbeheer</h2>
+            </div>
+            <% data.forEach(user => { %>
+                <div class="col-6 col-s-12">
+                    <div class="borderimg">
+                        <h2><%= user.username %></h2>
+                        <form action="/user/admin/<%= user._id %>?_method=PUT" method="post">
+                            <div class="row">
+                                <label for="username">Gebruikersnaam:</label><input type="text" name="username" value="<%= user.username %>" required>
+                            </div>
+                            <div class="row">
+                                <label for="email">E-mailadres:</label><input type="email" name="email" value="<%= user.email %>" required>
+                            </div>
+                            <div class="row">
+                                <label for="isActive" style="width: 45%; text-align: left;">Actief:</label><input style="width: 45%;" type="checkbox" name="isActive" <%= user.isActive === true ? 'checked' : '' %>>
+                            </div>
+                            <div class="row selectAdjust">
+                                <label for="role" style="width: 45%; text-align: left;">Rol:</label>
+                                <select name="role" required>
+                                    <option value="admin" <%= typeof user.role !== 'undefined' && user.role === 'admin' ? 'selected' : '' %>>Admin</option>
+                                    <option value="special" <%= typeof user.role !== 'undefined' && user.role === 'special' ? 'selected' : '' %>>Special</option>
+                                    <option value="user" <%= typeof user.role !== 'undefined' && user.role === 'user' ? 'selected' : '' %>>User</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <label for="description">Omschrijving:</label><textarea name="description" cols="5" rows="5"><%= user.description %></textarea>
+                            </div>
+                            <div class="row" style="padding: 10px 0px; display: flex; justify-content: space-around; align-content: space-eveny;">
+                                <input type="reset" value="Herstel">
+                                <div class="delButton"><i class="fas fa-skull-crossbones" onclick="deleteUser('<%= user._id %>');"></i></div>
+                                <input type="submit" value="Opslaan">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            <% }); %> 
+        </div>
+    </div>
+
+
+<%- include("../partials/footer") -%>

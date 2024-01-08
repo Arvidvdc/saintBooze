@@ -1,0 +1,40 @@
+<%- include("../partials/header") -%>
+    <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/user.css">
+
+    <div class="center">
+        <div class="col-12">
+            <h2 style="color: #ffffff;">Login</h2>
+            <div class="borderimg">
+                <form action="/user/login" method="post">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-2"><label>Inlognaam</label></div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" name="username"  placeholder="Gebruikersnaam" autofocus required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-2"><label>Wachtwoord</label></div>
+                        <div class="col-9">
+                            <input class="form-control" type="password" name="password"  placeholder="Wachtwoord" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-9">
+                            <div class="row but-row">
+                                <a href="/user/register">Registreren</a>
+                                <a href="/user/forgot">Wachtwoord vergeten</a>
+                                <input type="submit" value="Inloggen">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<%- include("../partials/footer") -%>

@@ -1,0 +1,49 @@
+<%- include("../partials/header") -%>
+    <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/user.css">
+
+    <div class="center">
+        <div class="col-12">
+            <h2 style="color: #ffffff;">Registreren</h2>
+            <div class="borderimg">
+                <form action="/user/register" method="POST">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-2">
+                            <label>Gebruikersnaam</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" name="username" type="text" placeholder="Gewenste gebruikersnaam." required autofocus>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-2">
+                            <label>Wachtwoord</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" name="password" type="password" placeholder="Geef een wachtwoord op." required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-2">
+                            <label>Email</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" name="email" type="email" placeholder="Geef een email op." required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-9">
+                            <input class="" type="submit" value="Registreren">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<%- include("../partials/footer") -%>

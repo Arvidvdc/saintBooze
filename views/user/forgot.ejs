@@ -1,0 +1,35 @@
+<%- include("../partials/header") -%>
+	
+	<link rel="stylesheet" href="/css/buttons.css">
+	<link rel="stylesheet" href="/css/forms.css">
+	<link rel="stylesheet" href="/css/user.css">
+
+	<div class="center">
+		<div class="col-12">
+			<h2 style="color: #ffffff;">Wachtwoord vergeten</h2>
+			<div class="borderimg">
+				<div class="row">
+					<div class="col-1"></div>
+					<div class="col-11">
+						Als jij je wachtwoord vergeten bent, dan kan je hier onder je e-mailadres opgeven. Er wordt dan een mail gestuurd naar dat adres met een linkje om je wachtwoord te herstellen.
+					</div>
+				</div>
+				<form action="/user/forgot" method="POST">
+					<div class="row">
+						<div class="col-1"></div>
+						<div class="col-2"><label>E-mailadres</label></div>
+						<div class="col-9">
+							<input type="email" name="email" autofocus>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12" style="display: flex;  justify-content: end;">
+							<input type="submit" class="but but-main" value="Reset Password">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<%- include("../partials/footer") -%>
