@@ -1,7 +1,8 @@
 console.log("boozeNew reporting");
 
-openSite = (givenSite) => {
-
+openSite = (givenSite,e) => {
+    e.preventDefault(); // default submit routine bypass
+    
     let gotoWebsite, url;
     gotoWebsite = document.getElementById(givenSite).value;
     if(gotoWebsite.length>0) {
@@ -12,7 +13,9 @@ openSite = (givenSite) => {
     }
 }
 
-enterImage = () => {
+enterImage = (e) => {
+    e.preventDefault(); // default submit routine bypass
+
     let url,  isNum, target;
     target = document.getElementById("image");
 
