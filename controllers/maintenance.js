@@ -1,5 +1,4 @@
 // Required dependencies
-const maintenance = require("../models/Maintenance");
 const   MAINTENANCE  = require("../models/Maintenance");
 
 // Index controller
