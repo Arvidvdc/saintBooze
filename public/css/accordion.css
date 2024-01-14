@@ -1,4 +1,4 @@
-.accordion-button {
+.accordion-button, .accordion-header {
     background-color: var(--menu-back);
     color: var(--menu-for);
     font-family: 'vinchand';
