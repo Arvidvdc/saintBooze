@@ -21,8 +21,21 @@
                         <li><a class="dropdown-item disabled" href="#">Something else here</a></li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle <%= typeof page !== 'undefined' && page.slice(0,11) === 'maintenance' ? 'active' : '' %>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Onderhoud
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item <%= typeof page !== 'undefined' && page === 'maintenance' ? 'active' : '' %>" href="/maintenance">Onderhoud index</a></li>
+                        <li><a class="dropdown-item <%= typeof page !== 'undefined' && page === 'maintenanceNew' ? 'active' : '' %>" href="/maintenance/new">Onderhoud toevoegen</a></li>
+                    </ul>
+                </li>
+
+                
+
+
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Onderhoud</a>
+                    <a class="nav-link disabled" href="#">Linkje</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
