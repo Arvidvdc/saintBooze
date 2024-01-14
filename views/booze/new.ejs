@@ -113,22 +113,20 @@
                 </div>
             </div>
 
-            <hr style="margin-bottom: 0px;">
-
-            <div class="row g-2">
-                <div class="col-md">
+            <div class="row gy-3 gx-4">
+                <div class="col-s-12 col-md-4">
                     <div class="form-floating">
                         <input type="text" class="form-control" id="origin" name="origin">
                         <label for="origin">Land van herkomst</label>
                     </div>
                 </div>
-                <div class="col-md">
+                <div class="col-s-12 col-md-4">
                     <div class="form-floating">
                         <input type="text" class="form-control" id="region" name="region">
                         <label for="region">Regio</label>
                     </div>
                 </div>
-                <div class="col-md">
+                <div class="col-s-12 col-md-4">
                     <div class="form-floating">
                         <select class="form-select" name="continent" id="continent">
                             <option selected></option>
@@ -141,48 +139,49 @@
                 </div>
             </div>
             
-            <div class="row g-2">
-                <div class="col-md">
+            <div class="row gy-3 gx-4">
+                <div class="col-s-12 col-md-6">
                 </div>
-                <div class="col-md">
+                <div class="col-s-12 col-md-6">
                     <button type="reset" class="btn but-sarge-default" style="float: inline-start;">Herstel</button>
                     <button type="submit" class="btn but-sarge-default" style="float: inline-end;">Opslaan</button>
                 </div>
             </div>
 
-
-            <div class="accordion" id="stBoozeMain">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#stBooze" aria-expanded="true" aria-controls="stBooze">
-                            st. Booze input
-                        </button>
-                    </h2>
-                    <div id="stBooze" class="accordion-collapse collapse" data-bs-parent="#stBoozeMain">
-                        <div class="accordion-body">
-                            <div class="row gy-2 gx-3 align-items-center justify-content-between" style="margin-top: 0px;">
-                                <div class="col-auto">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" style="height: 100px;" name="stBoozeNose" id="stBoozeNose" cols="30" rows="100"></textarea>
-                                        <label for="stBoozeNose">Nosing</label>
+            <div class="row gy-3 gx-4">
+                <div class="accordion" id="stBoozeMain">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#stBooze" aria-expanded="true" aria-controls="stBooze">
+                                st. Booze input
+                            </button>
+                        </h2>
+                        <div id="stBooze" class="accordion-collapse collapse" data-bs-parent="#stBoozeMain">
+                            <div class="accordion-body">
+                                <div class="row gy-2 gx-3 align-items-center justify-content-between" style="margin-top: 0px;">
+                                    <div class="col-auto">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" style="height: 100px;" name="stBoozeNose" id="stBoozeNose" cols="30" rows="100"></textarea>
+                                            <label for="stBoozeNose">Nosing</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" style="height: 100px;" name="stBoozeTaste" id="stBoozeTaste" cols="30" rows="10"></textarea>
-                                        <label for="stBoozeTaste">Tasting</label>
+                                    <div class="col-auto">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" style="height: 100px;" name="stBoozeTaste" id="stBoozeTaste" cols="30" rows="10"></textarea>
+                                            <label for="stBoozeTaste">Tasting</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="form-floating">
-                                        <input type="number" class="form-control" id="stBoozeRating" name="stBoozeRating">
-                                        <label for="stBoozeRating">Cijfer</label>
+                                    <div class="col-auto">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="stBoozeRating" name="stBoozeRating">
+                                            <label for="stBoozeRating">Cijfer</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="form-floating">
-                                        <input type="number" class="form-control" id="stBoozeDayAfter" name="stBoozeDayAfter">
-                                        <label for="stBoozeDayAfter">Day after</label>
+                                    <div class="col-auto">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="stBoozeDayAfter" name="stBoozeDayAfter">
+                                            <label for="stBoozeDayAfter">Day after</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
