@@ -1,5 +1,6 @@
 // Required dependencies
-const   BOOZE  = require("../models/boozeIndex");
+const   BOOZE           = require("../models/boozeIndex"),
+        SARgE           = require("../SARgEModules/maintenance");
 
 // Index controller
 exports.index = (req,res) => {
@@ -53,5 +54,9 @@ exports.add = (req,res) => {
 
 // New controller
 exports.new = (req,res) => {
-    res.render("./booze/new", { page: "boozeNew" });
+    let continent   = SARgE.category(res.items, "continent"),
+    category    = SARgE.category(res.items, "category"),
+    subcategory = SARgE.category(res.items, "subcategory");
+
+    res.render("./booze/new", { page: "boozeNew", continent: continent, category: category, subcategory: subcategory });
 }
