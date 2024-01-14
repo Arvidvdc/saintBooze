@@ -15,7 +15,8 @@ const   bodyParser          = require("body-parser"),
 // Routes
 const   indexRoutes         = require("./routes/index"),
         boozeRoutes         = require("./routes/booze"),
-        userRoutes          = require("./routes/users");
+        userRoutes          = require("./routes/users"),
+        maintenanceRoutes   = require("./routes/maintenance");
 
 // dotENV
 require('dotenv').config();
@@ -77,6 +78,7 @@ next();
 app.use(indexRoutes);
 app.use("/booze", boozeRoutes);
 app.use("/user", userRoutes);
+app.use("/maintenance", maintenanceRoutes);
 
 // Listener
 app.listen(appPort, appIP, ()=>console.log("Saint Booze \nStarted on: " + appIP + "\n      port: " + appPort ));

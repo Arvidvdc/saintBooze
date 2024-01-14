@@ -1,12 +1,11 @@
 .but-sarge-default {
     color: var(--menu-for);
     background-color: var(--menu-back);
-    padding-block: 15px;
     font-weight: bold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;;
 }
 
 .but-sarge-default:hover {
     color: var(--menu-high-for);
     background-color: var(--menu-high-back);
-
 }

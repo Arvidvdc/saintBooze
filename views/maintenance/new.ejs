@@ -1,0 +1,32 @@
+<%- include("../partials/header") -%>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+
+    <div class="container-fluid sgtContent">
+        <form action="/maintenance/new" method="post">
+            <div class="row gy-2 gx-3 align-items-center justify-content-center">
+                <div class="col-auto">
+                    <div class="form-floating">
+                        <select class="form-select" name="category" id="category" required autofocus>
+                            <option selected></option>
+                            <option value="category">Categorie</option>
+                            <option value="subcategory">Specificatie</option>
+                            <option value="continent">Werelddeel</option>
+                        </select>
+                        <label for="category">Geef een groep op</label>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="item" name="item" required>
+                        <label for="item">Geef item naam op</label>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn but-sarge-default" style="padding-block: 15px;">Toevoegen</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+<%- include("../partials/footer") -%>
