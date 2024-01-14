@@ -14,10 +14,16 @@ exports.add = (req,res) => {
         description : req.body.description,
         isActive    : true
     }
+    let addMore = (req.body.addMore=="on") ? (true) : (false);
+    console.log(addMore);
     MAINTENANCE.create(newMaintenance)
     .then((createdMaintenance) => {
         console.log("Maintenance created: ", createdMaintenance);
-        res.redirect("/maintenance");
+        if(addMore){
+            res.redirect("/maintenance/new");
+        } else {
+            res.redirect("/maintenance");
+        }
     })
     .catch((error) => {
         console.log("Error creating maintenance:", error);
