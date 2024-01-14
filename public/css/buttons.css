@@ -1,9 +1,12 @@
 .but-sarge-default {
     color: var(--menu-for);
     background-color: var(--menu-back);
-    font-weight: bold;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;;
-}
+    font-family: 'vinchand';
+    font-size: larger;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+    1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;}
 
 .but-sarge-default:hover {
     color: var(--menu-high-for);
