@@ -45,13 +45,9 @@
                     <div class="form-floating">
                         <select class="form-select" name="category" id="category">
                             <option selected></option>
-                            <option value="Whiskey">Whiskey</option>
-                            <option value="Whisky">Whisky</option>
-                            <option value="Gin">Gin</option>
-                            <option value="Bier">Bier</option>
-                            <option value="Wijn">Wijn</option>
-                            <option value="Liqueur">Liqueur</option>
-                            <option value="Rum">Rum</option>
+                            <% category.forEach(item => { %>
+                                <option value="<%= item.item %>"><%= item.item %></option>
+                            <% }); %>
                         </select>
                         <label for="category">Soort drank</label>
                     </div>
@@ -60,9 +56,9 @@
                     <div class="form-floating">
                         <select class="form-select" name="subcategory" id="subcategory">
                             <option selected></option>
-                            <option value="Single malt">Single malt</option>
-                            <option value="Blend">Blend</option>
-                            <option value="Sinasappel">Sinasappel</option>
+                            <% subcategory.forEach(item => { %>
+                                <option value="<%= item.item %>"><%= item.item %></option>
+                            <% }); %>
                         </select>
                         <label for="subcategory">Specificatie</label>
                     </div>
@@ -135,12 +131,9 @@
                     <div class="form-floating">
                         <select class="form-select" name="continent" id="continent">
                             <option selected></option>
-                            <option value="Afrika">Afrika</option>
-                            <option value="Australie">Australië</option>
-                            <option value="Azie">Azië</option>
-                            <option value="Europa">Europa</option>
-                            <option value="Noord Amerika">Noord Amerika</option>
-                            <option value="Zuid Amerika">Zuid Amerika</option>
+                            <% continent.forEach(item => { %>
+                                <option value="<%= item.item %>"><%= item.item %></option>
+                            <% }); %>
                         </select>
                         <label for="continent">Werelddeel</label>
                     </div>
@@ -181,8 +174,8 @@
                 <div class="col-md">
                 </div>
                 <div class="col-md">
-                    <button type="reset" class="btn btn-secondary" style="float: inline-start;">Herstel</button>
-                    <button type="submit" class="btn btn-primary" style="float: inline-end;">Opslaan</button>
+                    <button type="reset" class="btn but-sarge-default" style="float: inline-start;">Herstel</button>
+                    <button type="submit" class="btn but-sarge-default" style="float: inline-end;">Opslaan</button>
                 </div>
             </div>
 
