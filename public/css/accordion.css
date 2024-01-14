@@ -14,6 +14,6 @@
     color: var(--menu-high-for);
 }
 
-div.row:nth-child(even) {
+.accordion-body div.row:nth-child(even) {
     background: #c9ebc9;
 }
