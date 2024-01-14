@@ -1,0 +1,113 @@
+<%- include("../partials/header") -%>
+    <link rel="stylesheet" href="/css/accordion.css">
+
+    <div class="container-fluid sgtContent">
+        <div class="">
+            <div class="row gy-2 gx-3 align-items-center justify-content-center">
+
+                <div class="col-10 col-md-8">
+
+                    <div class="accordion" id="maintenance">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#continenten" aria-expanded="true" aria-controls="continenten">
+                                    Continenten  -<%= continent.length %>-
+                                </button>
+                            </h2>
+                            <div id="continenten" class="accordion-collapse collapse" data-bs-parent="#maintenance">
+                                <div class="accordion-body">
+                                    <% if(continent.length>0) { %>
+                                        <div class="row gy-2 gx-3 align-items-center justify-content-between" style="font-weight: bold;">
+                                            <div class="col-auto">NAAM</div>
+                                            <div class="col-auto">OMSCHRIJVING</div>
+                                            <div class="col-auto">ACTIEF</div>
+                                        </div>
+                                        <% continent.forEach(item => { %>
+                                            <div class="row gy-2 gx-3 align-items-center justify-content-between" style="margin-top: 0px;">
+                                                <div class="col-auto" style="font-weight: bold;"><%= item.item %></div>
+                                                <div class="col-auto"><%= item.description %></div>
+                                                <div class="col-auto">
+                                                    <input type="checkbox" name="<%= item.item %>" <%= item.isActive === true ? 'checked' : '' %> disabled>
+                                                </div>
+                                            </div>
+                                        <% }) %>
+                                    <% } else { %>
+                                        <div class="row gy-2 gx-3 align-items-center justify-content-between">
+                                            <span style="font-weight: bold;">Geen werelddelen gevonden.</span>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#categorieen" aria-expanded="true" aria-controls="categorieen">
+                                    Drank soorten -<%= category.length %>-
+                                </button>
+                            </h2>
+                            <div id="categorieen" class="accordion-collapse collapse" data-bs-parent="#maintenance">
+                                <div class="accordion-body">
+                                    <% if(category.length>0) { %>
+                                        <div class="row gy-2 gx-3 align-items-center justify-content-between" style="font-weight: bold;">
+                                            <div class="col-auto">NAAM</div>
+                                            <div class="col-auto">OMSCHRIJVING</div>
+                                            <div class="col-auto">ACTIEF</div>
+                                        </div>
+                                        <% category.forEach(item => { %>
+                                            <div class="row gy-2 gx-3 align-items-center justify-content-between" style="margin-top: 0px;">
+                                                <div class="col-auto" style="font-weight: bold;"><%= item.item %></div>
+                                                <div class="col-auto"><%= item.description %></div>
+                                                <div class="col-auto">
+                                                    <input type="checkbox" name="<%= item.item %>" <%= item.isActive === true ? 'checked' : '' %> disabled>
+                                                </div>
+                                            </div>
+                                        <% }) %>
+                                    <% } else { %>
+                                        <div class="row gy-2 gx-3 align-items-center justify-content-between">
+                                            <span style="font-weight: bold;">Geen drank soort gevonden.</span>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#subcategorieen" aria-expanded="true" aria-controls="subcategorieen">
+                                    Specificaties -<%= subcategory.length %>-
+                                </button>
+                            </h2>
+                            <div id="subcategorieen" class="accordion-collapse collapse" data-bs-parent="#maintenance">
+                                <div class="accordion-body">
+                                    <% if(subcategory.length>0) { %>
+                                        <div class="row gy-2 gx-3 align-items-center justify-content-between" style="font-weight: bold;">
+                                            <div class="col-auto">NAAM</div>
+                                            <div class="col-auto">OMSCHRIJVING</div>
+                                            <div class="col-auto">ACTIEF</div>
+                                        </div>
+                                        <% subcategory.forEach(item => { %>
+                                            <div class="row gy-2 gx-3 align-items-center justify-content-between" style="margin-top: 0px;">
+                                                <div class="col-auto" style="font-weight: bold;"><%= item.item %></div>
+                                                <div class="col-auto"><%= item.description %></div>
+                                                <div class="col-auto">
+                                                    <input type="checkbox" name="<%= item.item %>" <%= item.isActive === true ? 'checked' : '' %> disabled>
+                                                </div>
+                                            </div>
+                                        <% }) %>
+                                    <% } else { %>
+                                        <div class="row gy-2 gx-3 align-items-center justify-content-between">
+                                            <span style="font-weight: bold;">Geen specificaties gevonden.</span>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>                    
+
+            </div>
+        </div>
+    </div>
+<%- include("../partials/footer") -%>

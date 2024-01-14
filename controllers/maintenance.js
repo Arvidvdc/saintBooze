@@ -1,9 +1,14 @@
 // Required dependencies
-const   MAINTENANCE  = require("../models/Maintenance");
+const   MAINTENANCE     = require("../models/maintenance"),
+        SARgE           = require("../SARgEModules/maintenance");
 
 // Index controller
 exports.index = (req,res) => {
-    res.send("MAINTENANCE INDEX");
+    let continent   = SARgE.category(res.items, "continent"),
+        category    = SARgE.category(res.items, "category"),
+        subcategory = SARgE.category(res.items, "subcategory");
+    
+    res.render("./maintenance/index", {page: "maintenance", continent: continent, category: category, subcategory: subcategory });
 }
 
 // Create controller
@@ -15,7 +20,7 @@ exports.add = (req,res) => {
         isActive    : true
     }
     let addMore = (req.body.addMore=="on") ? (true) : (false);
-    console.log(addMore);
+    
     MAINTENANCE.create(newMaintenance)
     .then((createdMaintenance) => {
         console.log("Maintenance created: ", createdMaintenance);

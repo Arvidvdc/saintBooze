@@ -1,0 +1,19 @@
+.accordion-button {
+    background-color: var(--menu-back);
+    color: var(--menu-for);
+    font-family: 'vinchand';
+    font-size: x-large;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+    1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--menu-high-back);
+    color: var(--menu-high-for);
+}
+
+div.row:nth-child(even) {
+    background: #c9ebc9;
+}
