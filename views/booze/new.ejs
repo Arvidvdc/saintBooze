@@ -18,7 +18,6 @@
                         <label for="series">Serie</label>
                     </div>
                 </div>
-
                 <div class="col-s-12 col-md-3">
                     <div class="form-floating">
                         <select class="form-select" name="category" id="category">
@@ -42,7 +41,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row gy-3 gx-4">
                 <div class="col-s-12 col-md-2">
                     <div class="form-floating">
@@ -62,7 +60,6 @@
                         <label id="agedLabel" for="aged" class="form-label">Leeftijd</label>
                     </div>
                 </div>
-
                 <div class="col-s-12 col-md-3">
                     <div class="form-floating">
                         <input type="text" class="form-control" id="image" name="image">
@@ -73,10 +70,6 @@
                     <button class="btn but-sarge-default" style="padding-block: 15px;" onclick="enterImage(event)">Afbeelding</button>
                 </div>
             </div>
-    
-            
-
-
             <div class="row gy-3 gx-4">
                 <div class="col-s-12 col-md-4">
                     <div class="form-floating">
@@ -116,21 +109,24 @@
                 </div>
             </div>
 
-            <div class="row gy-3 gx-4">
+            
 
+            <div class="row gy-3 gx-4">
                 <div class="col-s-12 col-md-4">
                     <div class="form-floating">
-                        <select class="form-select" name="continent" id="continent">
+                        <% let countries = JSON.stringify(countrylist) %>
+                        <select class="form-select" name="continent" id="continent" onchange="selectCountry('<%= countries %>')">
                             <option selected></option>
                             <% continent.forEach(item => { %>
                                 <option value="<%= item.english %>"><%= item.item %></option>
                             <% }); %>
+                            <option value="all">Allemaal</option>
                         </select>
                         <label for="continent">Werelddeel</label>
                     </div>
                 </div>
                 <div class="col-s-12 col-md-4">
-                    <div class="form-floating">
+                    <div class="form-floating" id="country">
                         <input type="text" class="form-control" id="origin" name="origin">
                         <label for="origin">Land van herkomst</label>
                     </div>
@@ -142,7 +138,9 @@
                     </div>
                 </div>
             </div>
+
             
+
             <div class="row gy-3 gx-4">
                 <div class="col-s-12 col-md-6">
                 </div>
@@ -151,7 +149,6 @@
                     <button type="submit" class="btn but-sarge-default" style="float: inline-end;">Opslaan</button>
                 </div>
             </div>
-
             <div class="row gy-3 gx-4">
                 <div class="accordion" id="stBoozeMain">
                     <div class="accordion-item">
@@ -193,10 +190,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
         </form>
     </div>
     <script src="/js/boozeNew.js"></script>

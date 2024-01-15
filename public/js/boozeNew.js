@@ -31,3 +31,21 @@ enterImage = (e) => {
         }
     }
 }
+
+selectCountry = (countries) => {
+    let selectedContinent   = document.getElementById("continent").value,
+        selectCountry       = document.getElementById("country");
+    let countryList
+        try {
+            countryList = JSON.parse(countries);
+        }
+        catch(error) {
+            console.log("Error parsing:\n" + error.message + "\n" + countries);
+        }
+
+    countryList.forEach(country => {
+        if(country.startsWith(selectedContinent)){
+            console.log(country);
+        }
+    });
+}
