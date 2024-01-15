@@ -41,3 +41,16 @@ exports.add = (req,res) => {
 exports.new = (req,res) => {
     res.render("./maintenance/new", { page: "maintenanceNew" });
 }
+
+// Destroy controler
+exports.delete = (req,res) => {
+    MAINTENANCE.findByIdAndDelete(req.params.id)
+    .then((deletedItem) => {
+        console.log("deleted: " + deletedItem);
+        res.redirect("/maintenance");
+    })
+    .catch((error) =>{
+        console.log(error);
+    })
+        
+}
