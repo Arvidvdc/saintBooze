@@ -62,8 +62,6 @@ exports.new = (req,res) => {
         folderList  = [],
         fileList    = [];
 
-        console.log(continent);
-
         fs.readdir(path, (err,collection) => {
             if(!err) {
                 collection.forEach(file => {
