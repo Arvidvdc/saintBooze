@@ -2,7 +2,8 @@
     <link rel="stylesheet" href="/css/buttons.css">
     <link rel="stylesheet" href="/css/accordion.css">
     <div class="container-fluid sgtContent">
-        <form action="/booze/new" method="post" class="row g-3" style="margin-left: 5px; margin-right: 5px;">
+
+        <form action="/booze/new" method="post" class="row gy-3 gx-4" style="margin-top: -25px; margin-left: 10px; margin-right: 10px;">
 
             <div class="row gy-3 gx-4">
                 <div class="col-s-12 col-md-3">
@@ -40,8 +41,9 @@
                         <label for="subcategory">Specificatie</label>
                     </div>
                 </div>
+            </div>
 
-
+            <div class="row gy-3 gx-4">
                 <div class="col-s-12 col-md-2">
                     <div class="form-floating">
                         <input type="number" class="form-control" style="text-align: end;" id="contents" name="contents" value="70">
@@ -70,8 +72,9 @@
                 <div class="col-s-12 col-md-3">
                     <button class="btn but-sarge-default" style="padding-block: 15px;" onclick="enterImage(event)">Afbeelding</button>
                 </div>
-    
             </div>
+    
+            
 
 
             <div class="row gy-3 gx-4">
@@ -127,14 +130,14 @@
                 </div>
                 <div class="col-s-12 col-md-4">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="region" name="region">
-                        <label for="region">Regio</label>
+                        <input type="text" class="form-control" id="origin" name="origin">
+                        <label for="origin">Land van herkomst</label>
                     </div>
                 </div>
                 <div class="col-s-12 col-md-4">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="origin" name="origin">
-                        <label for="origin">Land van herkomst</label>
+                        <input type="text" class="form-control" id="region" name="region">
+                        <label for="region">Regio</label>
                     </div>
                 </div>
             </div>
