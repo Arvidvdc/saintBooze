@@ -19,12 +19,14 @@
                                     <% if(continent.length>0) { %>
                                         <div class="row gy-2 gx-3 align-items-center justify-content-between" style="font-weight: bold;">
                                             <div class="col-auto">NAAM</div>
+                                            <div class="col-auto">ENGELS</div>
                                             <div class="col-auto">OMSCHRIJVING</div>
                                             <div class="col-auto">ACTIEF</div>
                                         </div>
                                         <% continent.forEach(item => { %>
                                             <div class="row gy-2 gx-3 align-items-center justify-content-between" style="margin-top: 0px;">
                                                 <div class="col-auto" style="font-weight: bold;"><%= item.item %></div>
+                                                <div class="col-auto"><%= item.english %></div>
                                                 <div class="col-auto"><%= item.description %></div>
                                                 <div class="col-auto">
                                                     <input type="checkbox" name="<%= item.item %>" <%= item.isActive === true ? 'checked' : '' %> disabled>

@@ -8,6 +8,7 @@ const maintenanceSchema = new mongoose.Schema(
             required: true,
             dropDups: true
         },
+        english: String,
         category: {
                 type: String,
                 required: true,
