@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-s-12 col-md-2">
                     <div class="form-floating">
-                        <input type="number" class="form-control" style="text-align: end;" id="aged" name="aged" min="1000" max="2500">
+                        <input type="number" class="form-control" style="text-align: end;" id="aged" name="aged" max="300">
                         <label id="agedLabel" for="aged" class="form-label">Leeftijd</label>
                     </div>
                 </div>
@@ -117,12 +117,13 @@
             </div>
 
             <div class="row gy-3 gx-4">
+
                 <div class="col-s-12 col-md-4">
                     <div class="form-floating">
                         <select class="form-select" name="continent" id="continent">
                             <option selected></option>
                             <% continent.forEach(item => { %>
-                                <option value="<%= item.item %>"><%= item.item %></option>
+                                <option value="<%= item.english %>"><%= item.item %> - <%= item.category %></option>
                             <% }); %>
                         </select>
                         <label for="continent">Werelddeel</label>

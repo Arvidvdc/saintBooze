@@ -28,7 +28,7 @@ exports.add = (req,res) => {
         distilleryWebsite   : req.body.distilleryWebsite,
         origin              : req.body.origin,
         region              : req.body.region,
-        continent           : req.body.continent,
+        continent           : req.body.english,
         alcohol             : req.body.alcohol,
         image               : req.body.image,
         nose                : req.body.nose,
@@ -44,7 +44,7 @@ exports.add = (req,res) => {
     BOOZE.create(newBooze)
     .then((createdBOOZE) => {
         console.log("Booze created:", createdBOOZE);
-        res.redirect("");
+        res.redirect("/booze");
     })
     .catch((error) => {
         console.error("Error creating createdBOOZE:", error);
@@ -61,6 +61,8 @@ exports.new = (req,res) => {
         path        = "./public/flagCentral",
         folderList  = [],
         fileList    = [];
+
+        console.log(continent);
 
         fs.readdir(path, (err,collection) => {
             if(!err) {
