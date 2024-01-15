@@ -1,6 +1,7 @@
 // Required dependencies
 const   BOOZE           = require("../models/boozeIndex"),
-        SARgE           = require("../SARgEModules/maintenance");
+        SARgE           = require("../SARgEModules/maintenance"),
+        fs              = require("fs");
 
 // Index controller
 exports.index = (req,res) => {
@@ -55,8 +56,25 @@ exports.add = (req,res) => {
 // New controller
 exports.new = (req,res) => {
     let continent   = SARgE.category(res.items, "continent"),
-    category    = SARgE.category(res.items, "category"),
-    subcategory = SARgE.category(res.items, "subcategory");
+        category    = SARgE.category(res.items, "category"),
+        subcategory = SARgE.category(res.items, "subcategory"),
+        path        = "./public/flagCentral",
+        folderList  = [],
+        fileList    = [];
 
-    res.render("./booze/new", { page: "boozeNew", continent: continent, category: category, subcategory: subcategory });
+        fs.readdir(path, (err,collection) => {
+            if(!err) {
+                collection.forEach(file => {
+                    let stats = fs.statSync(path + "/" + file);
+                    if(stats.isFile()) {
+                        fileList.push(file);
+                    } else if(stats.isDirectory()) {
+                        folderList.push(file);
+                    } else {
+                        throw err;
+                    }
+                });
+                res.render("./booze/new", { page: "boozeNew", continent: continent, countrylist: fileList, category: category, subcategory: subcategory });
+            }
+        });
 }
