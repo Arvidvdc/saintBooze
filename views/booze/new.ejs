@@ -116,8 +116,13 @@
             <div class="row gy-3 gx-4">
                 <div class="col-s-12 col-md-4">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="origin" name="origin">
-                        <label for="origin">Land van herkomst</label>
+                        <select class="form-select" name="continent" id="continent">
+                            <option selected></option>
+                            <% continent.forEach(item => { %>
+                                <option value="<%= item.item %>"><%= item.item %></option>
+                            <% }); %>
+                        </select>
+                        <label for="continent">Werelddeel</label>
                     </div>
                 </div>
                 <div class="col-s-12 col-md-4">
@@ -128,13 +133,8 @@
                 </div>
                 <div class="col-s-12 col-md-4">
                     <div class="form-floating">
-                        <select class="form-select" name="continent" id="continent">
-                            <option selected></option>
-                            <% continent.forEach(item => { %>
-                                <option value="<%= item.item %>"><%= item.item %></option>
-                            <% }); %>
-                        </select>
-                        <label for="continent">Werelddeel</label>
+                        <input type="text" class="form-control" id="origin" name="origin">
+                        <label for="origin">Land van herkomst</label>
                     </div>
                 </div>
             </div>
