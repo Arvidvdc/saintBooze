@@ -15,6 +15,7 @@ exports.index = (req,res) => {
 exports.add = (req,res) => {
     let newMaintenance = {
         item        : req.body.item,
+        english     : req.body.english,
         category    : req.body.category,
         description : req.body.description,
         isActive    : true
