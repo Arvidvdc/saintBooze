@@ -34,7 +34,9 @@ enterImage = (e) => {
 
 selectCountry = (countries) => {
     let selectedContinent   = document.getElementById("continent").value,
-        selectCountry       = document.getElementById("country");
+        selectCountry       = document.getElementById("country"),
+        selectOrigin        = document.getElementById("origin"),
+        selectSource;
     let countryList
         try {
             countryList = JSON.parse(countries);
@@ -43,9 +45,15 @@ selectCountry = (countries) => {
             console.log("Error parsing:\n" + error.message + "\n" + countries);
         }
 
+    selectSource = '<option selected=""></option>'
+
     countryList.forEach(country => {
         if(country.startsWith(selectedContinent)){
-            console.log(country);
+            let item = country.split("-");
+            let waarde = item[1].replace(/^\s+|\s+$/gm,'');
+            selectSource += '<option value="' + waarde + '">' + waarde + '</option>';
         }
     });
+    selectOrigin.innerHTML = selectSource;
 }
+
