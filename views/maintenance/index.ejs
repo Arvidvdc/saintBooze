@@ -54,22 +54,25 @@
                             <div id="categorieen" class="accordion-collapse collapse" data-bs-parent="#maintenance">
                                 <div class="accordion-body">
                                     <% if(category.length>0) { %>
-                                        <div class="row gy-2 gx-3 align-items-center justify-content-between" style="font-weight: bold;">
-                                            <div class="col-auto">NAAM</div>
-                                            <div class="col-auto">OMSCHRIJVING</div>
-                                            <div class="col-auto">ACTIEF</div>
+                                        <div class="row" style="font-weight: bold;">
+                                            <div class="col-s-12 col-md-4">NAAM</div>
+                                            <div class="col-s-12 col-md-4">OMSCHRIJVING</div>
+                                            <div class="col-s-12 col-md-1">ACTIEF</div>
                                         </div>
                                         <% category.forEach(item => { %>
-                                            <div class="row gy-2 gx-3 align-items-center justify-content-between" style="margin-top: 0px;">
-                                                <div class="col-auto" style="font-weight: bold;"><%= item.item %></div>
-                                                <div class="col-auto"><%= item.description %></div>
-                                                <div class="col-auto">
+                                            <div class="row" style="margin-top: 0px;">
+                                                <div class="col-s-12 col-md-4" style="font-weight: bold;"><a href="/maintenance/<%= item._id %>"><%= item.item %></a></div>
+                                                <div class="col-s-12 col-md-4"><%= item.description %></div>
+                                                <div class="col-s-12 col-md-1 text-center">
                                                     <input type="checkbox" name="<%= item.item %>" <%= item.isActive === true ? 'checked' : '' %> disabled>
+                                                </div>
+                                                <div class="col-s-12 col-md-3">
+                                                    <i class="fas fa-skull-crossbones d-flex justify-content-end" onclick="deleteItem('<%= item._id %>','<%= item.item %>');"></i>
                                                 </div>
                                             </div>
                                         <% }) %>
                                     <% } else { %>
-                                        <div class="row gy-2 gx-3 align-items-center justify-content-between">
+                                        <div class="row">
                                             <span style="font-weight: bold;">Geen drank soort gevonden.</span>
                                         </div>
                                     <% } %>
@@ -86,22 +89,25 @@
                             <div id="subcategorieen" class="accordion-collapse collapse" data-bs-parent="#maintenance">
                                 <div class="accordion-body">
                                     <% if(subcategory.length>0) { %>
-                                        <div class="row gy-2 gx-3 align-items-center justify-content-between" style="font-weight: bold;">
-                                            <div class="col-auto">NAAM</div>
-                                            <div class="col-auto">OMSCHRIJVING</div>
-                                            <div class="col-auto">ACTIEF</div>
+                                        <div class="row" style="font-weight: bold;">
+                                            <div class="col-s-12 col-md-4">NAAM</div>
+                                            <div class="col-s-12 col-md-4">OMSCHRIJVING</div>
+                                            <div class="col-s-12 col-md-1">ACTIEF</div>
                                         </div>
                                         <% subcategory.forEach(item => { %>
-                                            <div class="row gy-2 gx-3 align-items-center justify-content-between" style="margin-top: 0px;">
-                                                <div class="col-auto" style="font-weight: bold;"><%= item.item %></div>
-                                                <div class="col-auto"><%= item.description %></div>
-                                                <div class="col-auto">
+                                            <div class="row" style="margin-top: 0px;">
+                                                <div class="col-s-12 col-md-4" style="font-weight: bold;"><a href="/maintenance/<%= item._id %>"><%= item.item %></a></div>
+                                                <div class="col-s-12 col-md-4"><%= item.description %></div>
+                                                <div class="col-s-12 col-md-1">
                                                     <input type="checkbox" name="<%= item.item %>" <%= item.isActive === true ? 'checked' : '' %> disabled>
+                                                </div>
+                                                <div class="col-s-12 col-md-3">
+                                                    <i class="fas fa-skull-crossbones d-flex justify-content-end" onclick="deleteItem('<%= item._id %>','<%= item.item %>');"></i>
                                                 </div>
                                             </div>
                                         <% }) %>
                                     <% } else { %>
-                                        <div class="row gy-2 gx-3 align-items-center justify-content-between">
+                                        <div class="row">
                                             <span style="font-weight: bold;">Geen specificaties gevonden.</span>
                                         </div>
                                     <% } %>
