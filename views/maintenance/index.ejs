@@ -25,7 +25,7 @@
                                         </div>
                                         <% continent.forEach(item => { %>
                                             <div class="row" style="margin-top: 0px;">
-                                                <div class="col-s-12 col-md-2" style="font-weight: bold;"><a href="/maintenance/edit<%= item._id %>"><%= item.item %></a></div>
+                                                <div class="col-s-12 col-md-2" style="font-weight: bold;"><a href="/maintenance/edit/<%= item._id %>"><%= item.item %></a></div>
                                                 <div class="col-s-12 col-md-2"><%= item.english %></div>
                                                 <div class="col-s-12 col-md-4"><%= item.description %></div>
                                                 <div class="col-s-12 col-md-1 text-center">
@@ -61,7 +61,7 @@
                                         </div>
                                         <% category.forEach(item => { %>
                                             <div class="row" style="margin-top: 0px;">
-                                                <div class="col-s-12 col-md-4" style="font-weight: bold;"><a href="/maintenance/edit<%= item._id %>"><%= item.item %></a></div>
+                                                <div class="col-s-12 col-md-4" style="font-weight: bold;"><a href="/maintenance/edit/<%= item._id %>"><%= item.item %></a></div>
                                                 <div class="col-s-12 col-md-4"><%= item.description %></div>
                                                 <div class="col-s-12 col-md-1 text-center">
                                                     <input type="checkbox" id="<%= item.item %>" name="<%= item.item %>" <%= item.isActive === true ? 'checked' : '' %> onchange="changeCheckbox('<%= item.item %>','<%= item._id %>')">
@@ -96,7 +96,7 @@
                                         </div>
                                         <% subcategory.forEach(item => { %>
                                             <div class="row" style="margin-top: 0px;">
-                                                <div class="col-s-12 col-md-4" style="font-weight: bold;"><a href="/maintenance/edit<%= item._id %>"><%= item.item %></a></div>
+                                                <div class="col-s-12 col-md-4" style="font-weight: bold;"><a href="/maintenance/edit/<%= item._id %>"><%= item.item %></a></div>
                                                 <div class="col-s-12 col-md-4"><%= item.description %></div>
                                                 <div class="col-s-12 col-md-1">
                                                     <input type="checkbox" id="<%= item.item %>" name="<%= item.item %>" <%= item.isActive === true ? 'checked' : '' %> onchange="changeCheckbox('<%= item.item %>','<%= item._id %>')">

@@ -14,7 +14,7 @@ router.post("/new", maintenance_controller.add);
 router.get("/new", maintenance_controller.new);
 
 // Edit route
-router.get("/edit/:id", maintenance_controller.edit);
+router.get("/edit/:id", maintenance_middleware.items(), maintenance_controller.edit);
 
 // Update route
 router.put("/update/:id", maintenance_controller.update);

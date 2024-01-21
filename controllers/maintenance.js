@@ -44,7 +44,19 @@ exports.new = (req,res) => {
 
 // Edit controler
 exports.edit = (req,res)  => {
-    res.send("Edit item: " + req.params.id);
+    let continent       = SARgE.category(res.items, "continent"),
+        category        = SARgE.category(res.items, "category"),
+        subcategory     = SARgE.category(res.items, "subcategory");
+
+    MAINTENANCE.findById(req.params.id)
+    .then((foundData) => {
+        console.log("Maintenance found for edit: ", foundData);
+        res.render("./maintenance/edit", {page: "maintenanceEdit",foundData: foundData, continent: continent, category: category, subcategory: subcategory });
+    })
+    .catch((error) => {
+        console.log("Error finding record for edit:", error);
+        res.send("Fout bij het ophalen van: " + req.params.id + "\n" + error);
+    })
 }
 
 exports.update = (req,res) => {
@@ -52,6 +64,11 @@ exports.update = (req,res) => {
     switch (req.query.u) {
         case "active":
             updateMaintenance.isActive = req.body.isActive;
+            break;
+        case "complete":
+            updateMaintenance.item        = req.body.item;
+            updateMaintenance.english     = req.body.english;
+            updateMaintenance.description = req.body.description;
             break;
         default:
             console.log("NOT FOUND: '" + req.query.u + "'.");
