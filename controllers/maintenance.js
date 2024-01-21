@@ -42,6 +42,32 @@ exports.new = (req,res) => {
     res.render("./maintenance/new", { page: "maintenanceNew" });
 }
 
+// Edit controler
+exports.edit = (req,res)  => {
+    res.send("Edit item: " + req.params.id);
+}
+
+exports.update = (req,res) => {
+    let updateMaintenance = {};
+    switch (req.query.u) {
+        case "active":
+            updateMaintenance.isActive = req.body.isActive;
+            break;
+        default:
+            console.log("NOT FOUND: '" + req.query.u + "'.");
+    }
+    
+    MAINTENANCE.findByIdAndUpdate(req.params.id, updateMaintenance)
+    .then((updatedItem) => {
+        console.log("updated: " + updatedItem);
+        res.redirect("/maintenance");
+    })
+    .catch((error) => {
+        console.log("Error during update: ",error);
+        res.send("Fout bij het bijwerken van: " + req.params.id + "\n" + error);
+    })
+}
+
 // Destroy controler
 exports.delete = (req,res) => {
     MAINTENANCE.findByIdAndDelete(req.params.id)
@@ -51,6 +77,6 @@ exports.delete = (req,res) => {
     })
     .catch((error) =>{
         console.log(error);
+        res.send("Fout bij het verwokderem van: " + req.params.id + "\n" + error);
     })
-        
 }
