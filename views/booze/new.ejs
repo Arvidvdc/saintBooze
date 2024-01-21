@@ -60,14 +60,17 @@
                         <label id="agedLabel" for="aged" class="form-label">Leeftijd</label>
                     </div>
                 </div>
-                <div class="col-s-12 col-md-3">
+                <div class="col-s-12 col-md-2">
                     <div class="form-floating">
                         <input type="text" class="form-control" id="image" name="image">
                         <label for="image">Afbeelding</label>
                     </div>
                 </div>
-                <div class="col-s-12 col-md-3">
-                    <button class="btn but-sarge-default" style="padding-block: 15px;" onclick="enterImage(event)">Afbeelding</button>
+                <div class="col-s-12 col-md-2">
+                    <button id="afbeelding" class="btn but-sarge-default" style="padding-block: 15px;width: 100%;" onclick="enterImage(event)">Afbeelding</button>
+                </div>
+                <div class="col-s-12 col-md-2">
+                    <button id="upload" class="btn but-sarge-default" style="padding-block: 15px;width: 100%;;" onclick="enterImage(event)">Upload</button>
                 </div>
             </div>
             <div class="row gy-3 gx-4">
@@ -155,7 +158,7 @@
                 <div class="accordion" id="stBoozeMain">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#stBooze" aria-expanded="true" aria-controls="stBooze">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stBooze" aria-expanded="true" aria-controls="stBooze">
                                 st. Booze input
                             </button>
                         </h2>

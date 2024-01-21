@@ -36,7 +36,7 @@ selectCountry = (countries) => {
     let selectedContinent   = document.getElementById("continent").value,
         selectCountry       = document.getElementById("country"),
         selectOrigin        = document.getElementById("origin"),
-        selectSource;
+        selectSource        = '<option selected=""></option>';
     let countryList
         try {
             countryList = JSON.parse(countries);
@@ -45,10 +45,12 @@ selectCountry = (countries) => {
             console.log("Error parsing:\n" + error.message + "\n" + countries);
         }
 
-    selectSource = '<option selected=""></option>'
-
     countryList.forEach(country => {
-        if(country.startsWith(selectedContinent)){
+        if(selectedContinent=="all") {
+            let item = country.split("-");
+            let waarde = item[1].replace(/^\s+|\s+$/gm,'');
+            selectSource += '<option value="' + waarde + '">' + waarde + '</option>';
+        } else if(country.startsWith(selectedContinent)) {
             let item = country.split("-");
             let waarde = item[1].replace(/^\s+|\s+$/gm,'');
             selectSource += '<option value="' + waarde + '">' + waarde + '</option>';
