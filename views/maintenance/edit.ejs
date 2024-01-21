@@ -3,31 +3,29 @@
     <link rel="stylesheet" href="/css/buttons.css">
 
     <div class="container-fluid sgtContent">
-        <form action="/maintenance/update/<%= foundData._id %>?_method=PUT&u=complete" method="post">
-            <div class="row gy-2 gx-3 align-items-center justify-content-center">
+        <form action="/maintenance/update/<%= foundData._id %>?_method=PUT&u=complete" method="post" class="row gy-2 gx-3 align-items-center justify-content-center">
+            <div class="col-auto">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="item" name="item" value="<%= foundData.item %>" required>
+                    <label for="item">Geef item naam op</label>
+                </div>
+            </div>
+            <% if(foundData.category=="continent") { %>
                 <div class="col-auto">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="item" name="item" value="<%= foundData.item %>" required>
-                        <label for="item">Geef item naam op</label>
+                        <input type="text" class="form-control" id="english" name="english" value="<%= foundData.english %>" >
+                        <label for="english">Geef engelse naam op</label>
                     </div>
                 </div>
-                <% if(foundData.category=="continent") { %>
-                    <div class="col-auto">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="english" name="english" value="<%= foundData.english %>" >
-                            <label for="english">Geef engelse naam op</label>
-                        </div>
-                    </div>
-                <% } %>
-                <div class="col-auto">
-                    <div class="form-floating">
-                        <textarea class="form-control" id="description" name="description" style="height: 60px"><%= foundData.description %> </textarea>
-                        <label for="description">Geef eem omschijving op</label>
-                    </div>
+            <% } %>
+            <div class="col-auto">
+                <div class="form-floating">
+                    <textarea class="form-control" id="description" name="description" style="height: 60px"><%= foundData.description %> </textarea>
+                    <label for="description">Geef eem omschijving op</label>
                 </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn but-sarge-default" style="padding-block: 15px;">Bijwerken</button>
-                </div>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn but-sarge-default" style="padding-block: 15px;">Bijwerken</button>
             </div>
         </form>
     </div>
