@@ -2,7 +2,7 @@ console.log("maintenanceIndex reporting");
 
 deleteItem = (id,itemName) => {
     if(confirm("Weet je zeker dat je item: " + itemName.toUpperCase() + " wilt verwijderen?")) {
-        fetch("/maintenance/delete" + id, {
+        fetch("/maintenance/delete/" + id, {
             method: 'DELETE',
             redirect:"follow",
         })
