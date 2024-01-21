@@ -7,7 +7,7 @@
             <div class="row gy-2 gx-3 align-items-center justify-content-center">
                 <div class="col-auto">
                     <div class="form-floating">
-                        <select class="form-select" name="category" id="category" required autofocus>
+                        <select class="form-select" name="category" id="category" onchange="showHideEnglish()" required autofocus>
                             <option selected></option>
                             <option value="category">Soort drank</option>
                             <option value="subcategory">Specificatie</option>
@@ -24,8 +24,8 @@
                 </div>
                 <div class="col-auto">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="english" name="english">
-                        <label for="english">Geef engelse naam op</label>
+                        <input type="text" class="form-control" style="display: none;" id="english" name="english">
+                        <label style="display: none;" id="englishTrigger" for="english">Geef engelse naam op</label>
                     </div>
                 </div>
                 <div class="col-auto">
@@ -45,4 +45,5 @@
             </div>
         </form>
     </div>
+    <script src="/js/maintenanceNew.js"></script>
 <%- include("../partials/footer") -%>
