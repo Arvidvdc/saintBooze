@@ -36,6 +36,7 @@ selectCountry = (countries) => {
     let selectedContinent   = document.getElementById("continent").value,
         selectCountry       = document.getElementById("country"),
         selectOrigin        = document.getElementById("origin"),
+        labelOrigin         = document.getElementById("labelOrigin"),
         selectSource        = '<option selected=""></option>';
     let countryList
         try {
@@ -45,17 +46,21 @@ selectCountry = (countries) => {
             console.log("Error parsing:\n" + error.message + "\n" + countries);
         }
 
+    let countertje = 0;
     countryList.forEach(country => {
         if(selectedContinent=="all") {
             let item = country.split("-");
             let waarde = item[1].replace(/^\s+|\s+$/gm,'');
+            countertje += 1
             selectSource += '<option value="' + waarde + '">' + waarde + '</option>';
         } else if(country.startsWith(selectedContinent)) {
             let item = country.split("-");
             let waarde = item[1].replace(/^\s+|\s+$/gm,'');
+            countertje += 1
             selectSource += '<option value="' + waarde + '">' + waarde + '</option>';
         }
     });
+    labelOrigin.innerText = "Land van herkomst [" + countertje + "]"
     selectOrigin.innerHTML = selectSource;
 }
 
