@@ -6,9 +6,30 @@
     font-weight: bolder;
     text-transform: uppercase;
     text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
-    1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;}
+    1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
+}
 
 .but-sarge-default:hover {
     color: var(--menu-high-for);
     background-color: var(--menu-high-back);
 }
+
+.but-sarge-default:active {
+    color: var(--menu-active-for);
+    background-color: var(--menu-active-back);;
+    text-shadow: 2px 0 #ffffff, -2px 0 #ffffff, 0 2px #ffffff, 0 -2px #ffffff,
+    1px 1px #ffffff, -1px -1px #ffffff, 1px -1px #ffffff, -1px 1px #ffffff;
+}
+
+.but-sarge-default:focus-visible {
+    color: var(--menu-active-for);
+    background-color: var(--menu-active-back);;
+    text-shadow: 2px 0 #ffffff, -2px 0 #ffffff, 0 2px #ffffff, 0 -2px #ffffff,
+    1px 1px #ffffff, -1px -1px #ffffff, 1px -1px #ffffff, -1px 1px #ffffff;
+}
+
+.but-sarge-default.disabled {
+    color: var(--menu-disabled-for);
+    background-color: var(--menu-disabled-back);
+}
+

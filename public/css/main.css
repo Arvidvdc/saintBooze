@@ -5,6 +5,8 @@
     --menu-for: #99C11C;
     --menu-high-back: #BF3816;
     --menu-high-for: #ffffff;
+    --menu-active-back: #DAA300;
+    --menu-active-for: #000000;
     --menu-disabled-back: #884205;
     --menu-disabled-for: #82993c;
     --content-back: #ffffff;
