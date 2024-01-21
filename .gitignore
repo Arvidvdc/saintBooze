@@ -65,3 +65,4 @@ SARgE/
 *.7z
 *.ion
 public/flagCentral/
+nodemon.json
