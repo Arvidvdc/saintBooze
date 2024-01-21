@@ -5,7 +5,10 @@
     <div class="container-fluid sgtContent">
         <form action="/maintenance/new" method="post">
             <div class="row gy-2 gx-3 align-items-center justify-content-center">
-                <div class="col-auto">
+                <div class="row" style="width: auto;">
+                    <div class="back" style="float: left;"><i class="fas fa-arrow-circle-left" onclick="history.back();"></i></div>
+                </div>
+                    <div class="col-auto">
                     <div class="form-floating">
                         <select class="form-select" name="category" id="category" onchange="showHideEnglish()" required autofocus>
                             <option selected></option>
