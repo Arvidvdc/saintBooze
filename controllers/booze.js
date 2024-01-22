@@ -53,6 +53,7 @@ exports.add = (req,res) => {
         continent           : req.body.english,
         alcohol             : req.body.alcohol,
         image               : req.body.image,
+        image               : (req.body.image=="") ? ("/boozeImages/stripes.png") : (req.body.image),
         nose                : req.body.nose,
         taste               : req.body.taste,
         stBoozeNose         : req.body.stBoozeNose,
