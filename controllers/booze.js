@@ -3,17 +3,39 @@ const   BOOZE           = require("../models/boozeIndex"),
         SARgE           = require("../SARgEModules/maintenance"),
         fs              = require("fs");
 
+let moment = require("moment"); //code voor opmaak datum
+const { utc, now } = require("moment");
+
 // Index controller
 exports.index = (req,res) => {
     BOOZE.find()
         .then((foundAllBooze) => {
-            res.render("./booze/index", { page: "boozeIndex", boozeData: foundAllBooze });
+            console.log(foundAllBooze);
+            let path        = "./public/flagCentral",
+                folderList  = [],
+                fileList    = [];
+            
+            fs.readdir(path, (err,collection) => {
+                if(!err) {
+                    collection.forEach(file => {
+                        let stats = fs.statSync(path + "/" + file);
+                        if(stats.isFile()) {
+                            fileList.push(file);
+                        } else if(stats.isDirectory()) {
+                            folderList.push(file);
+                        } else {
+                            throw err;
+                        }
+                    });
+                    res.render("./booze/index", { page: "boozeIndex", countrylist: fileList, moment: moment, boozeData: foundAllBooze });
+                }
+            });
         })
         .catch((error) => {
             console.error("Error creating foundAllBooze:", error);
             res.send("Fout bij het ophalen van records: " + "\n" + error);
         });
-    };
+}
 
     // Create controller
 exports.add = (req,res) => {

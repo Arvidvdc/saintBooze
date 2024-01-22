@@ -1,25 +1,42 @@
-<%- include("../partials/header") -%>
+    <%- include("../partials/header") -%>
 
-<div class="container-fluid sgtContent">
-    <div class="row row-cols-1 row-cols-md-6">
+    <div class="container-fluid sgtContent">
+        <div class="container px-3" style="border: 0;">
 
-        <% boozeData.forEach(bottle => { %>
-            <div class="col">
-            <div class="card h-100">
-                <img src="<%= bottle.image %>" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title"><%= bottle.name %></h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-                <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                </div>
+            <div class="row" style="justify-content: space-evenly;">
+                <% boozeData.forEach(bottle => { %>
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4" style="vertical-align: middle;">
+                                <img src="<%= bottle.image %>" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title"><span style="font-weight: bold;"><%= bottle.name %></span></h5>
+                                    <p class="card-text">Soort drank  : <span style="font-weight: bold;"><%= bottle.category %></span></p>
+                                    <p class="card-text">Alcohol in % : <span style="font-weight: bold;"><%= bottle.alcohol %></span></p>
+
+                                    <% if(!bottle.origin=="") { %>
+                                        <% countrylist.forEach(country => { %>
+                                            <% let item = country.split("-"); %>
+                                            <% let waarde = item[1].replace(/^\s+|\s+$/gm,''); %>
+                                
+                                            <% if (waarde==bottle.origin) { %>
+                                                <p class="card-text">Herkomst : <img src="/flagCentral/<%= country %>" alt="<%= waarde %>"></p>
+                                                <p class="card-text" style="text-align: center;font-weight: bold;"><%= waarde %></p>
+                                            <% } %>
+                                        <% }) %>
+                                    <% } %>
+                                    <p class="card-text text-center"><small class="text-body-secondary">Laatst bijgewerkt: <%= moment(bottle.dateModified).format("YYYY-MM-DD") %></small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
             </div>
-            </div>        
-        <% }); %>
 
+        </div>
     </div>
-</div>
 
-<script src="/js/boozeNew.js"></script>
-<%- include("../partials/footer") -%>
+    <script src="/js/boozeNew.js"></script>
+    <%- include("../partials/footer") -%>
