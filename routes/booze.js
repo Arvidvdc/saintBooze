@@ -13,5 +13,8 @@ router.get("/new", middleware_booze.items(), booze_controller.new);
 // Create route
 router.post("/new", booze_controller.add);
 
+// Stats rooute
+router.get("/stats", booze_controller.stats);
+
 // Export router
 module.exports = router;

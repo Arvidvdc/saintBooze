@@ -1,3 +1,5 @@
+const   BOOZE   = require("../models/boozeIndex");
+
 exports.category = (collection, category) => {
     let categoryItems = [];
     collection.forEach(record => {
@@ -6,4 +8,17 @@ exports.category = (collection, category) => {
         }
     });
     return categoryItems;
+}
+
+exports.countries = () => {
+   BOOZE.distinct("origin")
+    .then((countries) => {
+        console.log(countries);
+        return;
+    })
+    .catch((error) => {
+        console.error("Error distinct:", error);
+        throw error
+    })
+    console.log("Na");
 }

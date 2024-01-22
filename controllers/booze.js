@@ -9,35 +9,35 @@ const { utc, now } = require("moment");
 // Index controller
 exports.index = (req,res) => {
     BOOZE.find()
-        .then((foundAllBooze) => {
-            console.log(foundAllBooze);
-            let path        = "./public/flagCentral",
-                folderList  = [],
-                fileList    = [];
-            
-            fs.readdir(path, (err,collection) => {
-                if(!err) {
-                    collection.forEach(file => {
-                        let stats = fs.statSync(path + "/" + file);
-                        if(stats.isFile()) {
-                            fileList.push(file);
-                        } else if(stats.isDirectory()) {
-                            folderList.push(file);
-                        } else {
-                            throw err;
-                        }
-                    });
-                    res.render("./booze/index", { page: "boozeIndex", countrylist: fileList, moment: moment, boozeData: foundAllBooze });
-                }
-            });
-        })
-        .catch((error) => {
-            console.error("Error creating foundAllBooze:", error);
-            res.send("Fout bij het ophalen van records: " + "\n" + error);
+    .then((foundAllBooze) => {
+        console.log(foundAllBooze);
+        let path        = "./public/flagCentral",
+            folderList  = [],
+            fileList    = [];
+        
+        fs.readdir(path, (err,collection) => {
+            if(!err) {
+                collection.forEach(file => {
+                    let stats = fs.statSync(path + "/" + file);
+                    if(stats.isFile()) {
+                        fileList.push(file);
+                    } else if(stats.isDirectory()) {
+                        folderList.push(file);
+                    } else {
+                        throw err;
+                    }
+                });
+                res.render("./booze/index", { page: "boozeIndex", countrylist: fileList, moment: moment, boozeData: foundAllBooze });
+            }
         });
+    })
+    .catch((error) => {
+        console.error("Error creating foundAllBooze:", error);
+        res.send("Fout bij het ophalen van records: " + "\n" + error);
+    });
 }
 
-    // Create controller
+// Create controller
 exports.add = (req,res) => {
     let newBooze = {
         name                : req.body.name,
@@ -85,19 +85,28 @@ exports.new = (req,res) => {
         folderList  = [],
         fileList    = [];
 
-        fs.readdir(path, (err,collection) => {
-            if(!err) {
-                collection.forEach(file => {
-                    let stats = fs.statSync(path + "/" + file);
-                    if(stats.isFile()) {
-                        fileList.push(file);
-                    } else if(stats.isDirectory()) {
-                        folderList.push(file);
-                    } else {
-                        throw err;
-                    }
-                });
-                res.render("./booze/new", { page: "boozeNew", continent: continent, countrylist: fileList, category: category, subcategory: subcategory });
-            }
-        });
+    fs.readdir(path, (err,collection) => {
+        if(!err) {
+            collection.forEach(file => {
+                let stats = fs.statSync(path + "/" + file);
+                if(stats.isFile()) {
+                    fileList.push(file);
+                } else if(stats.isDirectory()) {
+                    folderList.push(file);
+                } else {
+                    throw err;
+                }
+            });
+            res.render("./booze/new", { page: "boozeNew", continent: continent, countrylist: fileList, category: category, subcategory: subcategory });
+        }
+    });
+}
+
+// Stats controller
+exports.stats = (req,res) => {
+    let countries   = SARgE.countries();
+
+
+    console.log("Contriller: " + countries);
+    res.send(countries);
 }
