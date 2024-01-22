@@ -18,7 +18,7 @@
                         <li><a class="dropdown-item <%= typeof page !== 'undefined' && page === 'boozeIndex' ? 'active' : '' %>" href="/booze">Booze index</a></li>
                         <li><a class="dropdown-item <%= typeof page !== 'undefined' && page === 'boozeNew' ? 'active' : '' %>" href="/booze/new">Add some booze</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item disabled" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item <%= typeof page !== 'undefined' && page === 'boozeStats' ? 'active' : '' %>" href="/booze/stats">Statistieken</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
