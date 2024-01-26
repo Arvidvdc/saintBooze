@@ -11,7 +11,7 @@ router.get("/", maintenance_middleware.items(), maintenance_controller.index);
 router.post("/new", maintenance_controller.add);
 
 // New route
-router.get("/new", maintenance_controller.new);
+router.get("/new", maintenance_middleware.items(), maintenance_controller.new);
 
 // Edit route
 router.get("/edit/:id", maintenance_middleware.items(), maintenance_controller.edit);

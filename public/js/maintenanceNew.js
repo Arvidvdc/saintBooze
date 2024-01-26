@@ -1,17 +1,27 @@
 console.log("maintenanceNEW reporting");
 
-showHideEnglish = () => {
-let trigger         = document.getElementById("category").value,
-    englishDisplay  = document.getElementById("english"),
-    englishLabel    = document.getElementById("englishTrigger");
+showHiddenOptions = () => {
+    let trigger     = document.getElementById("category").value,
+        english     = document.getElementById("englishInput"),
+        catMain     = document.getElementById("categoryMainInput");
+
+    english.removeAttribute("style");
+    catMain.removeAttribute("style");
+
+    switch (trigger) {
+        case "continent":
+            english.style.display = "block"
+            catMain.style.display = "none"
+            break;
+
+        case "subcategory":
+            catMain.style.display = "block"
+            english.style.display = "none"
+            break;
     
-    englishDisplay.removeAttribute("style");
-    englishDisplay.removeAttribute("style");
-    if(trigger=="continent") {
-        englishDisplay.style.display = "block";
-        englishLabel.style.display = "block";
-    } else {
-        englishDisplay.style.display = "none";
-        englishLabel.style.display = "none";
+        default:
+            english.style.display = "none"
+            catMain.style.display = "none"
+            break;
     }
 }

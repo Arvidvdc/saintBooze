@@ -39,7 +39,9 @@ exports.add = (req,res) => {
 
 // New controller
 exports.new = (req,res) => {
-    res.render("./maintenance/new", { page: "maintenanceNew" });
+    let subcategory     = SARgE.category(res.items, "category");
+
+    res.render("./maintenance/new", { page: "maintenanceNew", categoryMain: subcategory });
 }
 
 // Edit controler

@@ -13,6 +13,10 @@ const maintenanceSchema = new mongoose.Schema(
                 type: String,
                 required: true,
             },
+        categoryMain: {
+                type: String,
+                required: true,
+            },
         description: String,
         isActive: Boolean,
         dateAdded: {

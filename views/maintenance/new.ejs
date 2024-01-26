@@ -10,7 +10,7 @@
                 </div>
                     <div class="col-auto">
                     <div class="form-floating">
-                        <select class="form-select" name="category" id="category" onchange="showHideEnglish()" required autofocus>
+                        <select class="form-select" name="category" id="category" onchange="showHiddenOptions()" required autofocus>
                             <option selected></option>
                             <option value="category">Soort drank</option>
                             <option value="subcategory">Specificatie</option>
@@ -25,12 +25,25 @@
                         <label for="item">Geef item naam op</label>
                     </div>
                 </div>
-                <div class="col-auto">
+                
+                <div class="col-auto" id="englishInput" style="display: none;">
                     <div class="form-floating">
-                        <input type="text" class="form-control" style="display: none;" id="english" name="english">
-                        <label style="display: none;" id="englishTrigger" for="english">Geef engelse naam op</label>
+                        <input type="text" class="form-control" id="english" name="english">
+                        <label for="english">Geef engelse naam op</label>
                     </div>
                 </div>
+                <div class="col-auto" id="categoryMainInput" style="display: none;">
+                    <div class="form-floating" style="min-width: 160px;">
+                        <select class="form-select"name="categoryMain" id="categoryMain" required>
+                            <option selected></option>
+                            <% categoryMain.forEach(cat => { %>
+                                <option value="<%= cat.item %>"><%= cat.item %></option>
+                            <% }) %>
+                        </select>
+                        <label for="categoryMain">Geef soort drank op</label>
+                    </div>
+                </div>
+
                 <div class="col-auto">
                     <div class="form-floating">
                         <textarea class="form-control" id="description" name="description" style="height: 60px"></textarea>
