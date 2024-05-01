@@ -1,4 +1,5 @@
     <%- include("../partials/header") -%>
+    <link rel="stylesheet" href="css/boozeIndex.css">
 
     <div class="container-fluid sgtContent">
         <div class="container px-3" style="border: 0;">
@@ -8,26 +9,32 @@
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4" style="vertical-align: middle;">
-                                <img src="<%= bottle.image %>" class="img-fluid rounded-start" alt="...">
+                                <img src="/images/glas.png" class="empty" alt="" onclick="alert('Hier klikken voor lege fles');">
+                                <img src="<%= bottle.image %>" class="img-fluid rounded-start" style="float: right" alt="...">
                             </div>
                             <div class="col-md-8">
-                                <div class="card-body">
+                                <div class="card-header">
                                     <h5 class="card-title"><span style="font-weight: bold;"><%= bottle.name %></span></h5>
-                                    <p class="card-text">Soort drank  : <span style="font-weight: bold;"><%= bottle.category %></span></p>
-                                    <p class="card-text">Alcohol in % : <span style="font-weight: bold;"><%= bottle.alcohol %></span></p>
-
+                                </div>
+                                <div class="card-body" style="min-height: 350px;">
                                     <% if(!bottle.origin=="") { %>
                                         <% countrylist.forEach(country => { %>
                                             <% let item = country.split("-"); %>
                                             <% let waarde = item[1].replace(/^\s+|\s+$/gm,''); %>
                                 
                                             <% if (waarde==bottle.origin) { %>
-                                                <p class="card-text">Herkomst : <img src="/flagCentral/<%= country %>" alt="<%= waarde %>"></p>
-                                                <p class="card-text" style="text-align: center;font-weight: bold;"><%= waarde %></p>
+                                                <img src="/flagCentral/<%= country %>" alt="<%= waarde %>" onclick="alert('hier komt een link naar alles van dit land.')">
                                             <% } %>
                                         <% }) %>
                                     <% } %>
-                                    <p class="card-text text-center"><small class="text-body-secondary">Laatst bijgewerkt: <%= moment(bottle.dateModified).format("YYYY-MM-DD") %></small></p>
+
+                                    <p class="card-text">Soort drank  : <span style="font-weight: bold;"><%= bottle.category %></span></p>
+                                    <p class="card-text">Onderverdeling  : <span style="font-weight: bold;"><%= bottle.subcategory %></span></p>
+                                    <p class="card-text">Alcohol in % : <span style="font-weight: bold;"><%= bottle.alcohol %></span>   Leeftijd  : <span style="font-weight: bold;"><%= bottle.aged %></span></p>
+                                    
+                                </div>
+                                <div class="card-footer text-center text-body-secondary">
+                                    <small>Laatst bijgewerkt: <%= moment(bottle.dateModified).format("DD MMMM YYYY") %></small>
                                 </div>
                             </div>
                         </div>

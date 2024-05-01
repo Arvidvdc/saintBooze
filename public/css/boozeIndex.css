@@ -1,0 +1,24 @@
+.card-body img {
+    border-radius: 50%;
+    max-width: 40px;
+    margin-top: -60px;
+    margin-right: -15px;
+    float: right;
+    box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 #000000;
+}
+
+.card-body img:hover {
+    cursor: pointer;
+}
+.empty {
+    /* border-radius: 50%; */
+    max-width: 30px;
+    /* margin-top: 0px; */
+    float: left;
+    /* box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 #000000; */
+    /* z-index: 3; */
+}
+
+.empty:hover {
+    cursor: pointer;
+}
