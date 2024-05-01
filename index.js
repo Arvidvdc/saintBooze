@@ -61,7 +61,7 @@ app.use(flash());
 // Database connection
 mongoose.connect(appDB, {}).then(
     () => {
-        console.log('Database is connected') },
+        console.log('   │    Database is connected    │\n   └─────────────────────────────┘\n') },
     err => { console.log('Can not connect to the database'+ err)}
 );
 
@@ -81,4 +81,4 @@ app.use("/user", userRoutes);
 app.use("/maintenance", maintenanceRoutes);
 
 // Listener
-app.listen(appPort, appIP, ()=>console.log("Saint Booze \nStarted on: " + appIP + "\n      port: " + appPort ));
+app.listen(appPort, appIP, ()=>console.log("\n   ┌─────────────────────────────┐\n   │          SAINT BOOZE        │\n   ├─────────────────────────────┤\n   │   Started on: " + appIP + " │\n   │         port: " + appPort + "          │"));
