@@ -17,6 +17,7 @@ exports.add = (req,res) => {
         item        : req.body.item,
         english     : req.body.english,
         category    : req.body.category,
+        categoryMain: req.body.categoryMain,
         description : req.body.description,
         isActive    : true
     }
@@ -61,6 +62,7 @@ exports.edit = (req,res)  => {
     })
 }
 
+// Update controller
 exports.update = (req,res) => {
     let updateMaintenance = {};
     switch (req.query.u) {
