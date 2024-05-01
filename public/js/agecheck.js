@@ -1,9 +1,9 @@
-// When html page is loaded, then check sessionStorage: if ageVerified is false or not existing then show Modal Form 
+// When html page is loaded, then check localStorage: if ageVerified is false or not existing then show Modal Form 
 $(document).ready(function() {
-    let ageVerified = JSON.parse(sessionStorage.getItem("ageVerified"));
+    let ageVerified = JSON.parse(localStorage.getItem("ageVerified"));
     if(!ageVerified){
         ageVerified = false;
-        sessionStorage.setItem("ageVerified", JSON.stringify(ageVerified));
+        localStorage.setItem("ageVerified", JSON.stringify(ageVerified));
         $('#staticBackdrop').modal('show');
     }
 });
@@ -13,7 +13,7 @@ $(window).on('load',function(){
     filYearCombo();
 });
 
-// Change sessionStorage:ageVerified to true // sessionStorage wil be cleared after browser restarts
+// Change localStorage:ageVerified to true // localStorage wil be cleared after browser restarts
 $(document).on("click", "#buttonAgeCheck", function(){
     let buttonContinue = document.getElementById("buttonContinue");
     let enterdAge = getAge(document.getElementById("ageYear").value +"/" + document.getElementById("ageMonth").value +"/" + document.getElementById("ageDay").value);
@@ -22,7 +22,7 @@ $(document).on("click", "#buttonAgeCheck", function(){
         buttonContinue.innerText="Sorry too young";
     } else {
         ageVerified = true;
-        sessionStorage.setItem("ageVerified", JSON.stringify(ageVerified));
+        localStorage.setItem("ageVerified", JSON.stringify(ageVerified));
         buttonContinue.innerText="Welcome";
     }
 });
@@ -31,7 +31,7 @@ $(document).on("click", "#buttonAgeCheck", function(){
 $(document).on("click", "#buttonModal", function(){
     let buttonContinue = document.getElementById("buttonContinue");
     ageVerified = false;
-    sessionStorage.setItem("ageVerified", JSON.stringify(ageVerified));
+    localStorage.setItem("ageVerified", JSON.stringify(ageVerified));
     buttonContinue.innerText="Leave";
     $('#staticBackdrop').modal('show');
     $("#ageDay").val('01');
@@ -41,7 +41,7 @@ $(document).on("click", "#buttonModal", function(){
 
 // Button to continue (when age is approved) of to leave (goto google.com)
 $(document).on("click", "#buttonContinue", function(){
-    let ageVerified = JSON.parse(sessionStorage.getItem("ageVerified"));
+    let ageVerified = JSON.parse(localStorage.getItem("ageVerified"));
     if(!ageVerified){
         window.location.replace("http://www.google.com");
     } else {
